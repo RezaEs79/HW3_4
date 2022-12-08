@@ -292,30 +292,30 @@ TEST(HW3Test, TEST18) {
 //     EXPECT_EQ(reinterpret_cast<TextMessage*>(msgs[3])->get_text(), "message 4");
 // }
 
-// TEST(HW3Test, TEST23) {
-//     std::vector<int> v;
-//     initial_vector_with_3_mutiplies(v, 3);
-//     EXPECT_TRUE((v == std::vector<int>{3, 6, 9}));
+TEST(HW3Test, TEST23) {
+    std::vector<int> v;
+    initial_vector_with_3_mutiplies(v, 3);
+    EXPECT_TRUE((v == std::vector<int>{3, 6, 9}));
 
-//     initial_vector_with_3_mutiplies(v, 4);
-//     EXPECT_TRUE((v == std::vector<int>{3, 6, 9, 12}));
+    initial_vector_with_3_mutiplies(v, 4);
+    EXPECT_TRUE((v == std::vector<int>{3, 6, 9, 12}));
 
-//     initial_vector_with_3_mutiplies(v, 6);
-//     EXPECT_TRUE((v == std::vector<int>{3, 6, 9, 12, 15, 18}));
-// }
+    initial_vector_with_3_mutiplies(v, 6);
+    EXPECT_TRUE((v == std::vector<int>{3, 6, 9, 12, 15, 18}));
+}
 
-// TEST(HW3Test, TEST24) {
-//     std::vector<int> v1{1, 2, 3, 1, 2, 3, 1, 2, 5, 5, 6, 5, 7, 8, 4, 5, 6, 7, 1, 2, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4};
-//     EXPECT_EQ(count_unique_above(v1, 5), 4);
+TEST(HW3Test, TEST24) {
+    std::vector<int> v1{1, 2, 3, 1, 2, 3, 1, 2, 5, 5, 6, 5, 7, 8, 4, 5, 6, 7, 1, 2, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4};
+    EXPECT_EQ(count_unique_above(v1, 5), 4);
 
-//     std::vector<int> v2{1, 2, 3, 4, 5, 6, 1, 2, 34, 6, 8, 4, 5, 7, 8, 3, 5, 6, 7, 8, 11, 32, 55, 11, 32, 44, 55, 54, 29, 44, 6, 44, 99};
-//     EXPECT_EQ(count_unique_above(v2, 30), 6);
-// }
+    std::vector<int> v2{1, 2, 3, 4, 5, 6, 1, 2, 34, 6, 8, 4, 5, 7, 8, 3, 5, 6, 7, 8, 11, 32, 55, 11, 32, 44, 55, 54, 29, 44, 6, 44, 99};
+    EXPECT_EQ(count_unique_above(v2, 30), 6);
+}
 
-// TEST(HW3Test, TEST25) {
-//     std::vector<int> v1{1, 2, 3, 4, 5, 6, 7, 8, 9};
-//     EXPECT_EQ(vector_to_string(v1, ','), "9,8,7,6,5,4,3,2,1");
+TEST(HW3Test, TEST25) {
+    std::vector<int> v1{1, 2, 3, 4, 5, 6, 7, 8, 9};
+    EXPECT_EQ(vector_to_string(v1, ','), "9,8,7,6,5,4,3,2,1");
 
-//     std::vector<int> v2{1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 14};
-//     EXPECT_EQ(vector_to_string(v2, '*'), "14*12*9*8*7*6*5*4*3*2*1");
-// }
+    std::vector<int> v2{1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 14};
+    EXPECT_EQ(vector_to_string(v2, '*'), "14*12*9*8*7*6*5*4*3*2*1");
+}
