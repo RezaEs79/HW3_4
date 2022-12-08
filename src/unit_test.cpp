@@ -22,7 +22,7 @@ TEST(HW3Test, TEST1) {
     std::string time = std::ctime(&now);
     time.erase(time.find_last_not_of(" \n\r\t")+1); //trim the string
     EXPECT_EQ(msg.get_time(), time);
- }
+}
 
 TEST(HW3Test, TEST2) {
     Message msg{"text", "david", "jenifer"};
@@ -127,95 +127,95 @@ TEST(HW3Test, TEST9) {
     EXPECT_TRUE(found != std::string::npos);
 }
 
-// TEST(HW3Test, TEST10) {
-//     User user{"david", "", nullptr};
-//     EXPECT_EQ(user.get_username(), "david");
-// }
+TEST(HW3Test, TEST10) {
+    User user{"david", "", nullptr};
+    EXPECT_EQ(user.get_username(), "david");
+}
 
-// TEST(HW3Test, TEST11) {
-//     Server server;
-//     EXPECT_EQ(server.get_users().size(), 0);
-//     EXPECT_EQ(server.get_public_keys().size(), 0);
-//     EXPECT_EQ(server.get_messages().size(), 0);
-// }
+TEST(HW3Test, TEST11) {
+    Server server;
+    EXPECT_EQ(server.get_users().size(), 0);
+    EXPECT_EQ(server.get_public_keys().size(), 0);
+    EXPECT_EQ(server.get_messages().size(), 0);
+}
 
-// TEST(HW3Test, TEST12) {
-//     Server server;
-//     User david = server.create_user("david");
+TEST(HW3Test, TEST12) {
+    Server server;
+    User david = server.create_user("david");
 
-//     EXPECT_EQ(david.get_username(), "david");
+    EXPECT_EQ(david.get_username(), "david");
 
-//     EXPECT_EQ(server.get_users().size(), 1);
-//     EXPECT_EQ(server.get_public_keys().size(), 1);
-//     EXPECT_EQ(server.get_messages().size(), 0);
-// }
+    EXPECT_EQ(server.get_users().size(), 1);
+    EXPECT_EQ(server.get_public_keys().size(), 1);
+    EXPECT_EQ(server.get_messages().size(), 0);
+}
 
-// TEST(HW3Test, TEST13) {
-//     Server server;
-//     User david = server.create_user("david");
-//     EXPECT_THROW(server.create_user("david"), std::logic_error); // username already exists
-// }
+TEST(HW3Test, TEST13) {
+    Server server;
+    User david = server.create_user("david");
+    EXPECT_THROW(server.create_user("david"), std::logic_error); // username already exists
+}
 
-// TEST(HW3Test, TEST14) {
-//     Server server;
-//     User david = server.create_user("david");
-//     User jenifer = server.create_user("jenifer");
+TEST(HW3Test, TEST14) {
+    Server server;
+    User david = server.create_user("david");
+    User jenifer = server.create_user("jenifer");
 
-//     bool result = david.send_text_message("hello jenifer", "jenifer");
-//     EXPECT_TRUE(result);
+    bool result = david.send_text_message("hello jenifer", "jenifer");
+    EXPECT_TRUE(result);
 
-//     EXPECT_EQ(server.get_messages().size(), 1);
-//     TextMessage* textmsg = reinterpret_cast<TextMessage*>(server.get_messages()[0]);
-//     EXPECT_EQ(textmsg->get_text(), "hello jenifer");
-// }
+    EXPECT_EQ(server.get_messages().size(), 1);
+    TextMessage* textmsg = reinterpret_cast<TextMessage*>(server.get_messages()[0]);
+    EXPECT_EQ(textmsg->get_text(), "hello jenifer");
+}
 
-// TEST(HW3Test, TEST15) {
-//     Server server;
-//     User david = server.create_user("david");
-//     User jenifer = server.create_user("jenifer");
+TEST(HW3Test, TEST15) {
+    Server server;
+    User david = server.create_user("david");
+    User jenifer = server.create_user("jenifer");
 
-//     bool result = david.send_voice_message("jenifer");
-//     EXPECT_TRUE(result);
+    bool result = david.send_voice_message("jenifer");
+    EXPECT_TRUE(result);
 
-//     EXPECT_EQ(server.get_messages().size(), 1);
-//     VoiceMessage* voicemsg = reinterpret_cast<VoiceMessage*>(server.get_messages()[0]);
-//     EXPECT_EQ(voicemsg->get_voice().size(), 5);
-// }
+    EXPECT_EQ(server.get_messages().size(), 1);
+    VoiceMessage* voicemsg = reinterpret_cast<VoiceMessage*>(server.get_messages()[0]);
+    EXPECT_EQ(voicemsg->get_voice().size(), 5);
+}
 
-// TEST(HW3Test, TEST16) {
-//     Server server;
-//     User david = server.create_user("david");
+TEST(HW3Test, TEST16) {
+    Server server;
+    User david = server.create_user("david");
 
-//     bool result = david.send_text_message("hello jenifer", "jenifer"); // this time jenifer doesnt exist
-//     EXPECT_FALSE(result);
-//     EXPECT_EQ(server.get_messages().size(), 0);
-// }
+    bool result = david.send_text_message("hello jenifer", "jenifer"); // this time jenifer doesnt exist
+    EXPECT_FALSE(result);
+    EXPECT_EQ(server.get_messages().size(), 0);
+}
 
-// TEST(HW3Test, TEST17) {
-//     Server server;
-//     User david = server.create_user("david");
-//     User jenifer = server.create_user("jenifer");
+TEST(HW3Test, TEST17) {
+    Server server;
+    User david = server.create_user("david");
+    User jenifer = server.create_user("jenifer");
 
-//     VoiceMessage* voicemsg = new VoiceMessage("david", "jenifer");
-//     bool result = server.create_message(voicemsg, "wrong signature");
+    VoiceMessage* voicemsg = new VoiceMessage("david", "jenifer");
+    bool result = server.create_message(voicemsg, "wrong signature");
 
-//     EXPECT_FALSE(result);
-//     EXPECT_EQ(server.get_messages().size(), 0);
-// }
+    EXPECT_FALSE(result);
+    EXPECT_EQ(server.get_messages().size(), 0);
+}
 
-// TEST(HW3Test, TEST18) {
-//     Server server;
-//     User david = server.create_user("david");
-//     User jenifer = server.create_user("jenifer");
-//     User john = server.create_user("john");
+TEST(HW3Test, TEST18) {
+    Server server;
+    User david = server.create_user("david");
+    User jenifer = server.create_user("jenifer");
+    User john = server.create_user("john");
 
-//     david.send_text_message("hello jenifer", "jenifer");
-//     jenifer.send_text_message("hi there", "david");
-//     john.send_text_message("how you do'in", "david");
-//     jenifer.send_voice_message("david"); 
+    david.send_text_message("hello jenifer", "jenifer");
+    jenifer.send_text_message("hi there", "david");
+    john.send_text_message("how you do'in", "david");
+    jenifer.send_voice_message("david"); 
 
-//     EXPECT_EQ(server.get_messages().size(), 4);
-// }
+    EXPECT_EQ(server.get_messages().size(), 4);
+}
 
 // TEST(HW3Test, TEST19) {
 //     Server server;
@@ -319,8 +319,3 @@ TEST(HW3Test, TEST9) {
 //     std::vector<int> v2{1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 14};
 //     EXPECT_EQ(vector_to_string(v2, '*'), "14*12*9*8*7*6*5*4*3*2*1");
 // }
-
-
-
-
-
