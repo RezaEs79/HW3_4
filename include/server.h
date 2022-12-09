@@ -18,6 +18,11 @@ public:
     std::vector<Message*> get_messages();
     User create_user(std::string username); // throw Logic error
     bool create_message(Message* msg, std::string signature);
+    // STL Parts
+    std::vector<Message*> get_all_messages_from(std::string username);
+    std::vector<Message*> get_all_messages_to(std::string username);
+    std::vector<Message*> get_chat(std::string user1, std::string user2);
+    static void sort_msgs(std::vector<Message*>& msgs);
 
 private:
     std::vector<User> users; // to store our users
