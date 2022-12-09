@@ -31,10 +31,6 @@ User Server::create_user(std::string username)
     public_keys.insert({ username, public_key });
     return newuser;
 }
-char caster_from_unsigned(unsigned char ch)
-{
-    return static_cast<char>(ch);
-}
 
 bool Server::create_message(Message* msg, std::string signature)
 {
